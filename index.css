@@ -1,3 +1,73 @@
-#heading{
-    color: red;
+*{
+    margin: 0%;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 20px;
+    
+}
+
+.nav-items > ul{
+    list-style-type: none;
+    display: flex;
+    
+
+}
+.nav-items > ul >li{
+    margin: 20px;
+    font-size: 20px;
+}
+.nav-items > ul >li:hover{
+    cursor: pointer;
+}
+
+.logo{
+    width: 200px;
+   
+}
+.search{
+    margin: 20px;
+}
+
+.res-card{
+    width: 200px;
+    /* height: 350px; */
+    border: 1px solid black;
+    margin: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    line-height: 35px;
+    border-radius: 10px; /* Optional: adds rounded corners to the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow effect */
+    transition: all 0.3s ease;
+}
+
+.res-card:hover {
+    /* background-color: #ffffff; Change the background color on hover */
+    transform: scale(1.01); /* Optional: scales up the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: increases the shadow on hover */
+    cursor: pointer;
+  }
+/* 
+  .resLogo-container{
+    width: 100%;
+    height: 150px;
+  } */
+
+.res-logo{
+    min-width: 100%; /* Ensures the image doesn't exceed the width of the card */
+    height: 170px; /* Ensures the image doesn't exceed the height of the card */
+    /* object-fit: cover; */
+    /* width: 100%; */
+    /* padding: 5px; */
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+
 }
