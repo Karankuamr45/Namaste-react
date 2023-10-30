@@ -12,7 +12,7 @@ const ResCard=({resData}) => {
            <h3> {costForTwo}</h3>
            {/* <h4>{resData.info.cuisines.join(" , ")}</h4> */}
            <h4>{avgRating} Stars</h4>
-           <h4>{resData.info.sla.deliveryTime}Minutes</h4>
+           <h4>{resData.info.sla.deliveryTime} Minutes</h4>
         </div>
      )
   }

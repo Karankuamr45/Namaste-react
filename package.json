@@ -2,10 +2,9 @@
   "name": "reactdev2",
   "version": "1.0.0",
   "description": "my first react app",
- 
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "Karan",
@@ -16,10 +15,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 version"
   ]
-  
 }
