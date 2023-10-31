@@ -21,7 +21,16 @@
 .nav-items > ul >li{
     margin: 20px;
     font-size: 20px;
+    
 }
+.nav-link{
+  text-decoration: none;
+  color: black;
+}
+.active{
+  color: red;
+}
+
 .nav-items > ul >li:hover{
     cursor: pointer;
 }
@@ -197,6 +206,7 @@
 
 /* Footer Styles */
 .footer-container {
+  padding-top: 100px;
   margin-top: 50px;
   border: 1px solid black;
   background-color: #f0f0f0;
@@ -232,4 +242,48 @@ ul li {
 }
 
 /* Font Awesome Icons (Assuming you are using Font Awesome) */
+
+
+
+
+
+
+.restaurant-card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.restaurant-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.restaurant-details {
+  margin-top: 10px;
+}
+
+.restaurant-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.restaurant-cuisine {
+  color: #555;
+  margin: 5px 0;
+}
+
+.restaurant-rating {
+  font-weight: bold;
+  color: #e44d26;
+  margin: 0;
+}
 

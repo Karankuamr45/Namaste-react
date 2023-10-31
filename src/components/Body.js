@@ -2,6 +2,7 @@ import ResCard from "./ResCard"
 
 import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer"
+import { Link } from "react-router-dom"
 
 
 const Body=()=>{
@@ -65,7 +66,7 @@ return reslist.length===0 ? (<Shimmer/> ): (
           
           {
              filtterRes.map((value,index)=>{
-                 return <ResCard key={value.info.id}  resData={value}/>
+                 return <Link to={'/restaurants/' + value.info.id} key={value.info.id} > <ResCard  resData={value}/></Link>
              })
           }
         
