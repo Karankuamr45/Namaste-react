@@ -1,39 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Shimmer from './Shimmer'
 import { CDN_URL } from '../utils/constant'
 import { useParams } from 'react-router-dom'
-import { MENU_API } from '../utils/constant'
+import useRestauranrMenu from '../utils/useRestaurantMenu'
 
 const ResMenu = () => {
 
-
-
-    const[menu,setMenu]=useState(null)
-
-    const {resId}=useParams()
-    console.log(resId)
-
-
-
-
-    useEffect(()=>{
-        fetchMenu()
-
-    },[])
-
-
-    const fetchMenu = async ()=>{
-        const data=await fetch(MENU_API + resId + "&catalog_qa=undefined&submitAction=ENTER")
-
-        const json=await data.json()
-        // const restaurant=json?.data
-
-        console.log(json)
-        // console.log(restaurantdata)
-        setMenu(json?.data)
-    }
-
-
+ const {resId}=useParams()
+ const menu=useRestauranrMenu(resId)
 
     if(menu===null) return <Shimmer/>
 
@@ -42,15 +16,8 @@ const ResMenu = () => {
     const restaurantdata=menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.itemCards
     // const restaurantdata=menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.categories[2].itemCards
     console.log( "smdhsbd0",restaurantdata)
-
-
-
     
-
-
-
-
-   return (
+    return (
     <>
     <div className="restaurant-card">
       <img src={CDN_URL + cloudinaryImageId} alt="" className="restaurant-image" />

@@ -3,44 +3,28 @@ import ResCard from "./ResCard"
 import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
+import useBody from "../utils/useBody"
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 
 const Body=()=>{
    
 
-   const[reslist,setReslist]=useState([])
-   const[filtterRes,setFiltterRes]=useState([])
-
+   
    const[searctxt,setSearchtext]=useState("")
 
-   console.log(searctxt)
+   const {reslist,filtterRes,formHandler,setFiltterRes}=useBody()
+   
 
-   useEffect(()=>{
-      fetchData()
-
-   },[])
-
-   const fetchData=async()=>{
-      const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5194062&lng=77.2024306&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-      const json=await data.json()
-      const reesData=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      // console.log(json)
-      // console.log(reesData)
-      setReslist(reesData)
-      setFiltterRes(reesData)
-
-   }
+ 
 // if(reslist.length===0){
 //    return <Shimmer/>
 // }
 
+const onlineStatus=useOnlineStatus()
 
-const formHandler=(e)=>{
-   e.preventDefault()
+if(onlineStatus===false) return <h1>Bhai tera internet band h</h1>
 
-      searchRes=reslist.filter(item=>item.info.name.toLowerCase().includes(searctxt.toLowerCase()))
-      setFiltterRes(searchRes)
-   }
 
 return reslist.length===0 ? (<Shimmer/> ): (
        <div className="body">
