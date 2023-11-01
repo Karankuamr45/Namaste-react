@@ -39,8 +39,8 @@ const ResMenu = () => {
 
     const {name,cuisines,costForTwoMessage,cloudinaryImageId,avgRating}=menu?.cards[0]?.card?.card?.info
 
-    // const restaurantdata=menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.itemCards
-    const restaurantdata=menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.categories[2].itemCards
+    const restaurantdata=menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.itemCards
+    // const restaurantdata=menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.categories[2].itemCards
     console.log( "smdhsbd0",restaurantdata)
 
 
