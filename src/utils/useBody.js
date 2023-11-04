@@ -3,6 +3,7 @@ const useBody=()=>{
 
     const[reslist,setReslist]=useState([])
    const[filtterRes,setFiltterRes]=useState([])
+   const[searctxt,setSearchtext]=useState("")
 
     useEffect(()=>{
         fetchData()
@@ -30,6 +31,8 @@ const useBody=()=>{
         filtterRes:filtterRes,
         formHandler:formHandler,
         setFiltterRes:setFiltterRes,
+        searctxt:searctxt,
+        setSearchtext:setSearchtext
      }
 
 }
