@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { LOGO_URL } from '../utils/constant'
 
 import { Link, NavLink } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
+import UserContext from '../utils/UserContext'
 
 
 const Header=()=>{
@@ -13,8 +14,10 @@ const Header=()=>{
 
    const onlineStatus=useOnlineStatus()
 
+   const contextData=useContext(UserContext)
+
     return(
-       <div className='flex  justify-between items-center fixed top-0 w-full z-10   bg-pink-200 shadow-lg mb-5'>
+       <div className='flex  justify-between items-center    bg-pink-200 shadow-lg mb-5'>
           <div className="p-4 mx-8 my-2 ">
 
             <h2 className='text-6xl text-white font-bold'>Swiggy</h2>
@@ -42,6 +45,8 @@ const Header=()=>{
                 <li  className='px-4 hover:underline cursor-pointer text-white'>
                 <NavLink to='/contact'  className='text-2xl'>Cart</NavLink>
                 </li>
+
+                <li className='px-4 hover:underline cursor-pointer text-white text-2xl'>{contextData.loggedInUser}</li>
                 {/* <button className='login' onClick={()=>{
                   log==='Login'?setLog("Logout"):setLog('Login')
 

@@ -25,18 +25,18 @@ class UserClass extends React.Component{
         this.setState({
             userInfo:json
         })
-        console.log(json)
+        // console.log(json)
 
 
     }
 
     componentDidUpdate(){
-        console.log("componentDidUpdate")
+        // console.log("componentDidUpdate")
     }
 
 
     componentWillUnmount(){
-        console.log("Component will unmount")
+        // console.log("Component will unmount")
     }
 
 
