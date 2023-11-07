@@ -4,6 +4,7 @@ import { LOGO_URL } from '../utils/constant'
 import { Link, NavLink } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
 import UserContext from '../utils/UserContext'
+import { useSelector } from 'react-redux'
 
 
 const Header=()=>{
@@ -15,6 +16,12 @@ const Header=()=>{
    const onlineStatus=useOnlineStatus()
 
    const contextData=useContext(UserContext)
+
+  //  Selector (subscribing our store using the selector)
+
+  const cartItems=useSelector((store)=> store.cart.items);
+  // const cartItems=useSelector((store)=> store);
+  console.log(cartItems)
 
     return(
        <div className='flex  justify-between items-center    bg-pink-200 shadow-lg mb-5'>
@@ -43,7 +50,7 @@ const Header=()=>{
                   <NavLink to='/contact'  className='text-2xl'>Contact Us</NavLink>
                 </li>
                 <li  className='px-4 hover:underline cursor-pointer text-white'>
-                <NavLink to='/contact'  className='text-2xl'>Cart</NavLink>
+                <NavLink to='/cart'  className='text-2xl'>Cart ({cartItems.length} Items)</NavLink>
                 </li>
 
                 <li className='px-4 hover:underline cursor-pointer text-white text-2xl'>{contextData.loggedInUser}</li>

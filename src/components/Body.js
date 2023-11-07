@@ -7,6 +7,7 @@ import useBody from "../utils/useBody"
 import useOnlineStatus from "../utils/useOnlineStatus"
 import { useContext } from "react"
 import UserContext from "../utils/UserContext"
+import Mern from "./Mern"
 
 
 
@@ -37,6 +38,7 @@ if(onlineStatus===false) return <h1>Bhai tera internet band h</h1>
 return reslist.length===0 ? (<Shimmer/> ): (
 
        <div className="body ">
+         {/* <Mern/>   */}
        <div className="filter flex">
           
           <div className="  m-4 flex items-center shadow-sm justify-between overflow-hidden rounded-full ">

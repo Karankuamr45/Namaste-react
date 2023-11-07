@@ -16,3 +16,12 @@
 -Good Error Handling
 -different dev and production bundles
 
+
+
+# Redux ToolKit
+-Install @reduxjs/toolkit and react-redux 
+-Build our store
+-Connect our store to our app 
+-Slice (cartSlice)
+-dispatch(action)
+-Selector
